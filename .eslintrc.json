@@ -1,0 +1,17 @@
+{
+    "env": {
+      "jest": true,
+      "browser": true
+    },
+    "parser": "babel-eslint",
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["react", "jsx-a11y", "import"],
+    "rules": {
+      "react/jsx-filename-extension": [0],
+      "no-console": [0],
+      "react/jsx-one-expression-per-line": [0],
+      "comma-dangle": [2],
+      "react/sort-comp": [0]
+    }
+  }
+  
