@@ -2,31 +2,35 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import List from '../../src';
 
-const itemsArr = (() => {
+const data = (() => {
   const arr = [];
-  for (let i = 0; i < 1000; i += 1) {
+  for (let i = 0; i < 30; i += 1) {
     arr.push(i.toString());
   }
   return arr;
 })();
 
+let count = 30;
 const fakeApi = callbak => {
   setTimeout(() => {
-    const result = itemsArr;
-    const last = Number(itemsArr[itemsArr.length - 1]);
-    for (let i = 1; i <= 10; i += 1) {
+    const result = [];
+    const last = count;
+    for (let i = 0; i < 30; i += 1) {
       result.push((last + i).toString());
     }
+    count += 30;
     callbak(result);
   }, 2000);
 };
 
 class App extends Component {
-  state = { items: itemsArr };
+  state = { items: data };
 
   loadMore = () => {
     fakeApi(res => {
-      this.setState({ items: res });
+      this.setState(({ items }) => ({
+        items: items.concat(res),
+      }));
     });
   };
 
@@ -46,6 +50,8 @@ class App extends Component {
           items={items}
           itemHeight={100}
           indexKey={item => item}
+          loadMore={this.loadMore}
+          hasMore={count <= 120}
           renderItem={item => (
             <div style={{ background: '#fff', height: '90px' }} key={item}>
               {item}

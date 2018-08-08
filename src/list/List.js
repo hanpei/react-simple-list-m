@@ -9,23 +9,40 @@ export default class List extends Component {
     itemHeight: PropTypes.number,
     items: PropTypes.arrayOf(PropTypes.any),
     containerStyle: PropTypes.objectOf(PropTypes.any),
+    loadMore: PropTypes.func,
+    hasMore: PropTypes.bool,
   };
 
   static defaultProps = {
     itemHeight: 0,
     items: [],
     containerStyle: null,
+    loadMore: undefined,
+    hasMore: undefined,
   };
 
   state = {
-    visibleItems: [],
+    startIdx: 0,
+    endIdx: 0,
+    loading: false,
+    contentHeight: 0,
   };
 
-  rafUpdate = raf(this.update.bind(this));
+  rafUpdate = raf(this.update.bind(this))
 
   componentDidMount() {
     this.init();
     this.bindEvents();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { items, itemHeight } = this.props;
+    const { items: nextItems } = nextProps;
+    // after loadMore, items changed
+    if (items.length !== nextItems.length) {
+      const contentHeight = nextItems.length * itemHeight;
+      this.setState({ loading: false, contentHeight });
+    }
   }
 
   componentWillUnmount() {
@@ -33,10 +50,11 @@ export default class List extends Component {
   }
 
   init() {
-    const { items, itemHeight } = this.props;
-    this.wrapEle = getScrollParent(this.contentRef);
-    this.contentHeight = items.length * itemHeight;
-    this.rafUpdate();
+    const { itemHeight, items } = this.props;
+    this.wrapEle = getScrollParent(this.contentEle);
+    this.setState({ contentHeight: items.length * itemHeight });
+
+    this.update();
   }
 
   bindEvents() {
@@ -62,8 +80,8 @@ export default class List extends Component {
   handleScroll = () => {
     // console.group('handleScroll');
     // console.log('handleScroll');
-    // console.log('this.contentRef.clientHeight', this.contentRef.clientHeight);
-    // console.log('this.contentRef.offsetTop', this.contentRef.offsetTop);
+    // console.log('this.contentEle.clientHeight', this.contentEle.clientHeight);
+    // console.log('this.contentEle.offsetTop', this.contentEle.offsetTop);
     // console.log('this.wrapEle.clientHeight', this.wrapEle.clientHeight);
     // console.log('this.wrapEle.scrollHeight', this.wrapEle.scrollHeight);
     // console.log('this.wrapEle.offsetTop', this.wrapEle.offsetTop);
@@ -74,45 +92,87 @@ export default class List extends Component {
 
   update() {
     const { items, itemHeight } = this.props;
-    const { startIdx, endIdx } = this.calculate();
-    this.contentHeight = items.length * itemHeight;
-    if (startIdx !== this.prevStartIdx || endIdx !== this.prevEndIdx) {
-      this.prevStartIdx = startIdx;
-      this.prevEndIdx = endIdx;
+    const { startIdx, endIdx } = this.calculate(
+      this.wrapEle,
+      this.contentEle,
+      itemHeight,
+    );
+    const { startIdx: prevStartIdx, endIdx: prevEndIdx } = this.state;
+
+    if (startIdx !== prevStartIdx || endIdx !== prevEndIdx) {
       const topOffset = startIdx * itemHeight;
       this.setState({
         topOffset,
-        visibleItems: items.slice(startIdx, endIdx),
+        startIdx,
+        endIdx,
       });
+      // trigger loadMore
+      if (endIdx === items.length) {
+        this.handleLoadMore();
+      }
     }
   }
 
-  calculate() {
-    const { itemHeight } = this.props;
+  handleLoadMore = () => {
+    const { loading } = this.state;
+    const { loadMore, hasMore } = this.props;
+    if (loading) {
+      return;
+    }
+    if (hasMore && loadMore && typeof loadMore === 'function') {
+      this.setState({ loading: true });
+      loadMore();
+    }
+  };
+
+  calculate = (wrapEle, contentEle, itemHeight) => {
     const startIdx = Math.max(
       0,
-      Math.floor(
-        (this.wrapEle.scrollTop - this.contentRef.offsetTop) / itemHeight,
-      ),
+      Math.floor((wrapEle.scrollTop - contentEle.offsetTop) / itemHeight),
     );
-    const visibleItemsLength =
-      Math.ceil(this.wrapEle.clientHeight / itemHeight) + 1;
+    const visibleItemsLength = Math.ceil(wrapEle.clientHeight / itemHeight);
     const endIdx = startIdx + visibleItemsLength;
     return { startIdx, endIdx };
+  };
+
+  renderFooter() {
+    const { hasMore } = this.props;
+    const { loading } = this.state;
+    if (!hasMore) {
+      return <div style={{ height: '100px' }}>没有更多了</div>;
+    }
+    if (loading) {
+      return (
+        <div style={{ height: '100px', background: 'red' }}>loading...</div>
+      );
+    }
+    return null;
   }
 
   render() {
-    const { visibleItems, topOffset } = this.state;
-    const height = `${this.contentHeight}px`;
-    const paddingTop = `${topOffset}px`;
-    const { itemHeight, renderItem, indexKey, containerStyle } = this.props;
-    const itemStyle = { height: `${itemHeight}px`, boxSizing: 'border-box' };
+    const {
+      startIdx,
+      endIdx,
+      topOffset,
+      contentHeight,
+    } = this.state;
+    const {
+      itemHeight,
+      renderItem,
+      items,
+      indexKey,
+      containerStyle,
+    } = this.props;
 
+    const visibleItems = items.slice(startIdx, endIdx);
+    const height = `${contentHeight}px`;
+    const paddingTop = `${topOffset}px`;
+    const itemStyle = { height: `${itemHeight}px`, boxSizing: 'border-box' };
     return (
       <div style={{ containerStyle }}>
         <div
           ref={node => {
-            this.contentRef = node;
+            this.contentEle = node;
           }}
           style={{ height, paddingTop, boxSizing: 'border-box' }}
         >
@@ -122,6 +182,7 @@ export default class List extends Component {
             </div>
           ))}
         </div>
+        {this.renderFooter()}
       </div>
     );
   }

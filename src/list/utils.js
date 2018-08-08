@@ -16,14 +16,37 @@ export function getScrollParent(node) {
 export function raf(fn) {
   let running = false;
 
-  return () => {
+  return (...args) => {
     if (running) return;
+
     running = true;
 
     window.requestAnimationFrame(() => {
       console.log('raf');
-      fn();
+      fn.apply(this, args);
+
       running = false;
     });
   };
 }
+
+export const rafThrottle = callback => {
+  let requestId;
+
+  const later = (context, args) => () => {
+    requestId = null;
+    callback.apply(context, args);
+  };
+
+  const throttled = function throttled(...args) {
+    console.log(args);
+    if (requestId === null || requestId === undefined) {
+      console.log('raf');
+      requestId = requestAnimationFrame(later(this, args));
+    }
+  };
+
+  throttled.cancel = () => cancelAnimationFrame(requestId);
+
+  return throttled;
+};
