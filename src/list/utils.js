@@ -1,8 +1,7 @@
 export function getScrollParent(node) {
   const isElement = node instanceof HTMLElement;
   const overflowY = isElement && window.getComputedStyle(node).overflowY;
-  const isScrollable = overflowY !== 'visible' && overflowY !== 'hidden';
-
+  const isScrollable = overflowY && overflowY !== 'visible' && overflowY !== 'hidden';
   if (!node) {
     return null;
   }
@@ -22,31 +21,31 @@ export function raf(fn) {
     running = true;
 
     window.requestAnimationFrame(() => {
-      console.log('raf');
       fn.apply(this, args);
-
       running = false;
     });
   };
 }
 
-export const rafThrottle = callback => {
-  let requestId;
 
-  const later = (context, args) => () => {
-    requestId = null;
-    callback.apply(context, args);
-  };
 
-  const throttled = function throttled(...args) {
-    console.log(args);
-    if (requestId === null || requestId === undefined) {
-      console.log('raf');
-      requestId = requestAnimationFrame(later(this, args));
-    }
-  };
+// export const rafThrottle = callback => {
+//   let requestId;
 
-  throttled.cancel = () => cancelAnimationFrame(requestId);
+//   const later = (context, args) => () => {
+//     requestId = null;
+//     callback.apply(context, args);
+//   };
 
-  return throttled;
-};
+//   const throttled = function throttled(...args) {
+//     console.log(args);
+//     if (requestId === null || requestId === undefined) {
+//       console.log('raf');
+//       requestId = requestAnimationFrame(later(this, args));
+//     }
+//   };
+
+//   throttled.cancel = () => cancelAnimationFrame(requestId);
+
+//   return throttled;
+// };

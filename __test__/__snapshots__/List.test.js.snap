@@ -1,0 +1,971 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List mount document body 1`] = `
+<List
+  containerStyle={null}
+  hasMore={true}
+  indexKey={[Function]}
+  itemHeight={60}
+  items={
+    Array [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+    ]
+  }
+  loadMore={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  renderItem={[Function]}
+  renderLoader={[Function]}
+>
+  <div
+    style={null}
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "1800px",
+          "paddingTop": "1980px",
+        }
+      }
+    />
+    <div>
+      loading...
+    </div>
+  </div>
+</List>
+`;
+
+exports[`List mount document body 2`] = `
+<List
+  containerStyle={null}
+  hasMore={true}
+  indexKey={[Function]}
+  itemHeight={60}
+  items={
+    Array [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+    ]
+  }
+  loadMore={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  renderItem={[Function]}
+  renderLoader={[Function]}
+>
+  <div
+    style={null}
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "1800px",
+          "paddingTop": "1980px",
+        }
+      }
+    />
+    <div>
+      loading...
+    </div>
+  </div>
+</List>
+`;
+
+exports[`List mount in container 1`] = `
+<List
+  containerStyle={
+    Object {
+      "background": "yellow",
+      "borderSizing": "border-box",
+      "height": "400px",
+      "overflowY": "scroll",
+      "padding": "20px",
+    }
+  }
+  indexKey={[Function]}
+  itemHeight={60}
+  items={
+    Array [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+    ]
+  }
+  renderItem={[Function]}
+>
+  <div
+    style={
+      Object {
+        "background": "yellow",
+        "borderSizing": "border-box",
+        "height": "400px",
+        "overflowY": "scroll",
+        "padding": "20px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "1800px",
+          "paddingTop": "0px",
+        }
+      }
+    />
+  </div>
+</List>
+`;
+
+exports[`List render 1`] = `
+<div
+  style={null}
+>
+  <div
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "height": "1800px",
+        "paddingTop": "0px",
+      }
+    }
+  >
+    <div
+      key="0"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        0
+      </div>
+    </div>
+    <div
+      key="1"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        1
+      </div>
+    </div>
+    <div
+      key="2"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        2
+      </div>
+    </div>
+    <div
+      key="3"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        3
+      </div>
+    </div>
+    <div
+      key="4"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      key="5"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        5
+      </div>
+    </div>
+    <div
+      key="6"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        6
+      </div>
+    </div>
+    <div
+      key="7"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        7
+      </div>
+    </div>
+    <div
+      key="8"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        8
+      </div>
+    </div>
+    <div
+      key="9"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        9
+      </div>
+    </div>
+    <div
+      key="10"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        10
+      </div>
+    </div>
+    <div
+      key="11"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        11
+      </div>
+    </div>
+    <div
+      key="12"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        12
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`List render 2`] = `
+<div
+  style={null}
+>
+  <div
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "height": "2040px",
+        "paddingTop": "0px",
+      }
+    }
+  >
+    <div
+      key="0"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        0
+      </div>
+    </div>
+    <div
+      key="1"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        1
+      </div>
+    </div>
+    <div
+      key="2"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        2
+      </div>
+    </div>
+    <div
+      key="3"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        3
+      </div>
+    </div>
+    <div
+      key="4"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      key="5"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        5
+      </div>
+    </div>
+    <div
+      key="6"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        6
+      </div>
+    </div>
+    <div
+      key="7"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        7
+      </div>
+    </div>
+    <div
+      key="8"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        8
+      </div>
+    </div>
+    <div
+      key="9"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        9
+      </div>
+    </div>
+    <div
+      key="10"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        10
+      </div>
+    </div>
+    <div
+      key="11"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        11
+      </div>
+    </div>
+    <div
+      key="12"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        12
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`List render 3`] = `
+<div
+  style={null}
+>
+  <div
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "height": "2040px",
+        "paddingTop": "0px",
+      }
+    }
+  >
+    <div
+      key="0"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        0
+      </div>
+    </div>
+    <div
+      key="1"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        1
+      </div>
+    </div>
+    <div
+      key="2"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        2
+      </div>
+    </div>
+    <div
+      key="3"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        3
+      </div>
+    </div>
+    <div
+      key="4"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      key="5"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        5
+      </div>
+    </div>
+    <div
+      key="6"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        6
+      </div>
+    </div>
+    <div
+      key="7"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        7
+      </div>
+    </div>
+    <div
+      key="8"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        8
+      </div>
+    </div>
+    <div
+      key="9"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        9
+      </div>
+    </div>
+    <div
+      key="10"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        10
+      </div>
+    </div>
+    <div
+      key="11"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        11
+      </div>
+    </div>
+    <div
+      key="12"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        12
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`List render loading 1`] = `
+<div
+  style={null}
+>
+  <div
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "height": "1800px",
+        "paddingTop": "0px",
+      }
+    }
+  >
+    <div
+      key="0"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        0
+      </div>
+    </div>
+    <div
+      key="1"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        1
+      </div>
+    </div>
+    <div
+      key="2"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        2
+      </div>
+    </div>
+    <div
+      key="3"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        3
+      </div>
+    </div>
+    <div
+      key="4"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        4
+      </div>
+    </div>
+    <div
+      key="5"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        5
+      </div>
+    </div>
+    <div
+      key="6"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        6
+      </div>
+    </div>
+    <div
+      key="7"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        7
+      </div>
+    </div>
+    <div
+      key="8"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        8
+      </div>
+    </div>
+    <div
+      key="9"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        9
+      </div>
+    </div>
+    <div
+      key="10"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        10
+      </div>
+    </div>
+    <div
+      key="11"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        11
+      </div>
+    </div>
+    <div
+      key="12"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        12
+      </div>
+    </div>
+  </div>
+  <div>
+    loading...
+  </div>
+</div>
+`;
