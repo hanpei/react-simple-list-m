@@ -1,6 +1,6 @@
 {
   "name": "react-simple-list-m",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react, mobile, list, infinite list, virtual list",
   "main": "lib/react-simple-toast-m.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test": "jest --env=jsdom --watchAll",
     "codecov": "codecov",
     "coverage": "jest",
-    "build-demo": "webpack --config config/webpack.config.js --mode production",
+    "build-demo": "webpack --config config/webpack.config.demo.js --mode production",
     "deploy": "gh-pages -d examples/dist",
     "publish-demo": "npm run build-demo && npm run deploy"
   },
@@ -104,6 +104,10 @@
   },
   "author": "hanpei",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanpei/react-simple-list-m.git"
+  },
   "keywords": [
     "react",
     "list",
