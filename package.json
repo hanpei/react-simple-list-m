@@ -1,7 +1,7 @@
 {
   "name": "react-simple-list-m",
   "version": "0.1.0",
-  "description": "react mobile list, infinite list, virtual list",
+  "description": "react, mobile, list, infinite list, virtual list",
   "main": "lib/react-simple-toast-m.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.js --mode development",
@@ -107,7 +107,7 @@
   "keywords": [
     "react",
     "list",
-    "inifite",
+    "inifinite list",
     "vitual list"
   ]
 }
