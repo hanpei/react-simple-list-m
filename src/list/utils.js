@@ -1,11 +1,16 @@
 export function getScrollParent(node) {
   const isElement = node instanceof HTMLElement;
   const overflowY = isElement && window.getComputedStyle(node).overflowY;
-  const isScrollable = overflowY && overflowY !== 'visible' && overflowY !== 'hidden';
+  const overflowX = isElement && window.getComputedStyle(node).overflowX;
+  const isScrollableY = overflowY && overflowY !== 'visible' && overflowY !== 'hidden';
+  const isScrollableX = overflowX && overflowX !== 'visible' && overflowX !== 'hidden';
   if (!node) {
     return null;
   }
-  if (isScrollable && node.scrollHeight >= node.clientHeight) {
+  if (isScrollableY && node.scrollHeight >= node.clientHeight) {
+    return node;
+  }
+  if (isScrollableX && node.scrollWidth >= node.clientWidth) {
     return node;
   }
 
