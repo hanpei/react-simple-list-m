@@ -1,6 +1,6 @@
 {
   "name": "react-simple-list-m",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "react, mobile, list, infinite list, virtual list",
   "main": "lib/react-simple-toast-m.js",
   "scripts": {
