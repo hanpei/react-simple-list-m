@@ -1,6 +1,4 @@
 /** * webpack.config.js ** */
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
@@ -59,16 +57,6 @@ module.exports = {
       commonjs: 'react-dom',
       commonjs2: 'react-dom',
       amd: 'react-dom'
-    },
-    'react-transition-group': {
-      commonjs: 'react-transition-group',
-      commonjs2: 'react-transition-group',
-      amd: 'react-transition-group'
-    },
-    'react-transition-group/CSSTransition': {
-      commonjs: 'react-transition-group/CSSTransition',
-      commonjs2: 'react-transition-group/CSSTransition',
-      amd: 'react-transition-group/CSSTransition'
     },
     'prop-types': {
       commonjs: 'prop-types',

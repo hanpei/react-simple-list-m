@@ -31,16 +31,15 @@ export default class List extends Component {
     topOffset: 0,
   };
 
-  rafUpdate = rafThrottle(this.update.bind(this));
 
   componentDidMount() {
     this.init();
     this.bindEvents();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { items, itemHeight } = this.props;
-    const { items: nextItems } = nextProps;
+  componentDidUpdate(prevProps, prevState) {
+    const { items, itemHeight } = prevProps;
+    const { items: nextItems } = this.props;
     // after loadMore, items changed
     if (items.length !== nextItems.length) {
       const contentHeight = nextItems.length * itemHeight;
@@ -92,6 +91,8 @@ export default class List extends Component {
     this.rafUpdate();
   };
 
+  rafUpdate = rafThrottle(this.update);
+
   update() {
     const { items, itemHeight } = this.props;
     // update starIdx endIdx when scrolling
@@ -142,12 +143,12 @@ export default class List extends Component {
     return (
       <div style={containerStyle}>
         <div
-          ref={node => {
+          ref={(node) => {
             this.contentEle = node;
           }}
           style={{ height, paddingTop, boxSizing: 'border-box' }}
         >
-          {visibleItems.map(item => (
+          {visibleItems.map((item) => (
             <div key={indexKey(item)} style={itemStyle}>
               {renderItem(item)}
             </div>

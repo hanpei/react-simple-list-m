@@ -45,9 +45,9 @@ export default class HorizontalList extends Component {
     this.bindEvents();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { items, itemWidth } = this.props;
-    const { items: nextItems } = nextProps;
+  componentDidUpdate(prevProps, prevState) {
+    const { items, itemWidth } = prevProps;
+    const { items: nextItems } = this.props;
     // after loadMore, items changed
     if (items.length !== nextItems.length) {
       const contentWidth = nextItems.length * itemWidth;
