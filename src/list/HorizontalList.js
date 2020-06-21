@@ -91,7 +91,7 @@ export default class HorizontalList extends Component {
     this.rafUpdate();
   };
 
-  scrollByIndex = index => {
+  scrollByIndex = (index) => {
     const { itemWidth } = this.props;
     const width = this.wrapNode.clientWidth || this.wrapNode.innerWidth;
     const left = itemWidth * index - width / 2;
@@ -181,7 +181,7 @@ export default class HorizontalList extends Component {
         style={{ width: '100%', overflowX: 'scroll', ...containerStyle }}
       >
         <div
-          ref={node => {
+          ref={(node) => {
             this.contentEle = node;
           }}
           style={{

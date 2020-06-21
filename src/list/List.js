@@ -31,7 +31,6 @@ export default class List extends Component {
     topOffset: 0,
   };
 
-
   componentDidMount() {
     this.init();
     this.bindEvents();
