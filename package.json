@@ -2,14 +2,14 @@
   "name": "react-simple-list-m",
   "version": "0.2.0",
   "description": "react, mobile, list, infinite list, virtual list",
-  "main": "lib/react-simple-toast-m.js",
+  "main": "lib/react-simple-picker-m.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.js --mode development",
     "lib": "webpack --config config/webpack.config.lib.js --mode production",
     "lint": "eslint --ext .js src __test__",
     "test": "jest --env=jsdom --watchAll",
     "codecov": "codecov",
-    "coverage": "jest",
+    "coverage": "jest --env=jsdom --coverage",
     "build-demo": "webpack --config config/webpack.config.demo.js --mode production",
     "deploy": "gh-pages -d examples/dist",
     "publish-demo": "npm run build-demo && npm run deploy"
